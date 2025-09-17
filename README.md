@@ -39,6 +39,9 @@ A number that can be expressed as a ratio `(x/y)` of two integers is called a ra
 • Fractions with a numerator of 0 and a denominator of n are stored as a reduced fraction of 0/1   
 `e.g. (0/3 -> 0/1)`.  
 
+• If the denominator is zero, the program should throw an error and require a new input.
+`e.g. (3/0 -> "Error: Denominator can't be zero. Please input numerator and denominator again.")`.
+
 • If the numerator is a multiple of the denominator and is converted to an integer, it is stored as a fraction with a denominator of 1   
 `e.g. (6/3 -> 2/1)`  
 
@@ -53,8 +56,9 @@ A number that can be expressed as a ratio `(x/y)` of two integers is called a ra
 ## 2. Scoring Criteria (Total 5 points):
 
 - No compile errors: 1 point
-- The output of the arithmetic equations are correct: 2 point
-- The output of the calculate results are correct : 2 point
+- The output of the arithmetic equations are correct: 1 point
+- The zero exception handling is implement: 1 point
+- The output of the calculate results are correct: 2 point
 
 
 ## 3. Example: (Red font for input, blue font for output)
@@ -64,12 +68,14 @@ A number that can be expressed as a ratio `(x/y)` of two integers is called a ra
 **Input:**
 
 ```
+3 0
 3 9
 2 -20
 ```
   
 **Output:**
 ```
+Error: Denominator can't be zero. Please input numerator and denominator again.
 1/3
 -1/10
 1/3 + -1/10 = 7/30 = 0.23
