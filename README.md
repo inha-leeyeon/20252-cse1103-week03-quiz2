@@ -48,7 +48,7 @@ A number that can be expressed as a ratio `(x/y)` of two integers is called a ra
 
 • Methods that output retain two decimal places:  `cout << ... << setprecision(2) << fixed << d << endl;`  
 
-• Requires <sstream> inclusion to use ostringstream class  
+• The `ostringstream` class requires including the `<sstream>` header. 
 
 • Assume that the denominator of the rational number input by the user and the denominator of the rational number of the calculation result are not zero.  
 
