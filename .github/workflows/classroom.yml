@@ -11,6 +11,16 @@ jobs:
     runs-on: self-hosted
     if: github.actor != 'github-classroom[bot]'
     steps:
+    - name: Kill existing a.exe process
+      shell: powershell
+      run: |
+        $process = Get-Process -Name a -ErrorAction SilentlyContinue
+        if ($process) {
+          Stop-Process -Name a -Force
+          echo "a.exe was running and has been terminated."
+        } else {
+          echo "a.exe not running."
+        }
     - name: Checkout code
       uses: actions/checkout@v4
     - name: test1
@@ -18,8 +28,8 @@ jobs:
       uses: classroom-resources/autograding-command-grader@v1
       with:
         test-name: test1
-        setup-command: g++ main.cpp
-        command: "a.exe"
+        setup-command: ''
+        command: g++ main.cpp
         timeout: 10
         max-score: 1
     - name: test2
@@ -28,15 +38,26 @@ jobs:
       with:
         test-name: test2
         setup-command: ''
-        command: python3 C:\Users\assignment\codes\code_test.py --output_path=C:\Users\assignment\answer\week02\quiz1\output.txt --input_path=C:\Users\assignment\answer\week02\quiz1\input.txt
+        command: python C:\Users\Public\2025-2\work\week-03\week03-quiz2-01.py main.cpp
         timeout: 10
-        max-score: 4
+        max-score: 2
+
+    - name: test3
+      id: test3
+      uses: classroom-resources/autograding-command-grader@v1
+      with:
+        test-name: test3
+        setup-command: ''
+        command: python C:\Users\Public\2025-2\work\week-03\week03-quiz2-02.py main.cpp
+        timeout: 10
+        max-score: 2
+    
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
         TEST1_RESULTS: "${{steps.test1.outputs.result}}"
         TEST2_RESULTS: "${{steps.test2.outputs.result}}"
+        TEST3_RESULTS: "${{steps.test3.outputs.result}}"
       with:
-        runners: test1,test2
 
-
+        runners: test1,test2,test3
