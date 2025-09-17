@@ -1,5 +1,6 @@
 # Week03 Quiz2:
 
+<br/>
 
 ## 1. Requirements:
 
@@ -51,22 +52,25 @@ A number that can be expressed as a ratio `(x/y)` of two integers is called a ra
 
 • Assume that the denominator of the rational number input by the user and the denominator of the rational number of the calculation result are not zero.  
 
-   
+<br/>
+<br/>
 
 ## 2. Scoring Criteria (Total 5 points):
 
 - No compile errors: 1 point
-- The output of the arithmetic equations are correct: 1 point
-- The zero exception handling is implement: 1 point
+- The zero exception handling is implement: 2 point
 - The output of the calculate results are correct: 2 point
 
+<br/>
+<br/>
 
-## 3. Example: (Red font for input, blue font for output)
+## 3. Examples: 
+
+### Example1 (Red font for input, blue font for output):
 
 ![image](https://github.com/chyh001228/images/blob/main/w3q2.png)  
 
 **Input:**
-
 ```
 3 0
 3 9
@@ -87,5 +91,58 @@ Error: Denominator can't be zero. Please input numerator and denominator again.
 **Actual results:**  
 ![image](https://github.com/chyh001228/images/blob/main/w3q2_c.png) 
 
+<br/>
+
+### Example2 (Red font for input, blue font for output):
+
+![image](https://github.com/chyh001228/images/blob/main/w3q2_e2.png)  
+
+**Input:**
+```
+5 -10
+3 0
+3 7
+```
+  
+**Output:**
+```
+-1/2
+Error: Denominator can't be zero. Please input numerator and denominator again.
+3/7
+-1/2 + 3/7 = -1/14 = -0.07
+-1/2 - 3/7 = -13/14 = -0.93
+-1/2 * 3/7 = -3/14 = -0.21
+-1/2 / 3/7 = -7/6 = -1.17
+```
+
+**Actual results:**  
+![image](https://github.com/chyh001228/images/blob/main/w3q2_c_e2.png) 
+
+<br/>
+
+### Example3 (Red font for input, blue font for output):
+
+![image](https://github.com/chyh001228/images/blob/main/w3q2_e3.png)  
+
+**Input:**
+```
+6 -9
+-3 2
+```
+  
+**Output:**
+```
+-2/3
+-3/2
+-2/3 + -3/2 = -13/6 = -2.17
+-2/3 - -3/2 = 5/6 = 0.83
+-2/3 * -3/2 = 1/1 = 1.00
+-2/3 / -3/2 = 4/9 = 0.44
+```
+
+**Actual results:**  
+![image](https://github.com/chyh001228/images/blob/main/w3q2_c_e3.png) 
+
+<br/>
 
 <img src="https://cdn.imweb.me/upload/S201906178853c3e170808/c5d876d707352.jpg" width=30% align=center />
